@@ -37,15 +37,15 @@ or can be run in isolation with `cap production yarn:install`
 Configurable options:
 
 ```ruby
-set :yarn_target_path, -> { release_path.join('subdir') } # default not set
-set :yarn_flags, '--production --silent --no-progress'    # default
-set :yarn_roles, :all                                     # default
-set :v_env_variables, {}                               # default
+set :yarn_target_path, -> { release_path.join('subdir') }  # default not set
+set :yarn_flags, '--production --pure-lockfile --no-emoji' # default
+set :yarn_roles, :all                                      # default
+set :yarn_env_variables, {}                                # default
 ```
 
 ### Dependencies
 
-yarn allows for normal `dependencies` and `devDependencies`. By default this gem uses `'--production --silent --no-progress'` as the install flags which will **only** install `dependencies` and skip `devDependencies`. If you want your `devDependencies` installed as well, then remove `--production`.
+yarn allows for normal `dependencies` and `devDependencies`. By default this gem uses `'--production --pure-lockfile --no-emoji'` as the install flags which will **only** install `dependencies` and skip `devDependencies`. If you want your `devDependencies` installed as well, then remove `--production`.
 
 ## Contributing
 
