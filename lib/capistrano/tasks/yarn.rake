@@ -2,12 +2,12 @@ namespace :yarn do
   desc <<-DESC
         Install the project dependencies via yarn. By default, devDependencies \
         will not be installed. The install command is executed \
-        with the --production, --silent and --no-spin flags.
+        with the --production, --pure-lockfile, and --no-emoji flags.
 
         You can override any of these defaults by setting the variables shown below.
 
           set :yarn_target_path, nil
-          set :yarn_flags, '--production --silent --no-spin'
+          set :yarn_flags, '--production --pure-lockfile --no-emoji'
           set :yarn_roles, :all
           set :yarn_env_variables, {}
     DESC
@@ -44,7 +44,7 @@ end
 
 namespace :load do
   task :defaults do
-    # set :yarn_flags, %w(--production --silent --no-progress)
+    set :yarn_flags, %w(--production --pure-lockfile --no-emoji)
     set :yarn_roles, :all
   end
 end
