@@ -7,7 +7,7 @@ namespace :yarn do
         You can override any of these defaults by setting the variables shown below.
 
           set :yarn_target_path, nil
-          set :yarn_flags, '--production --pure-lockfile --no-emoji'
+          set :yarn_flags, '--production --pure-lockfile --no-emoji --no-progress'
           set :yarn_roles, :all
           set :yarn_env_variables, {}
     DESC
@@ -44,7 +44,7 @@ end
 
 namespace :load do
   task :defaults do
-    set :yarn_flags, %w(--production --pure-lockfile --no-emoji)
+    set :yarn_flags, %w(--production --pure-lockfile --no-emoji --no-progress)
     set :yarn_roles, :all
   end
 end
