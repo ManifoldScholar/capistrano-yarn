@@ -38,7 +38,7 @@ Configurable options:
 
 ```ruby
 set :yarn_target_path, -> { release_path.join('subdir') }  # default not set
-set :yarn_flags, '--production --pure-lockfile --no-emoji' # default
+set :yarn_flags, '--production --pure-lockfile --no-emoji --no-progress' # default
 set :yarn_roles, :all                                      # default
 set :yarn_env_variables, {}                                # default
 ```
